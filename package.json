@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/adamGrgic/NodeJSBox/issues"
   },
-  "homepage": "https://github.com/adamGrgic/NodeJSBox#readme"
+  "homepage": "https://github.com/adamGrgic/NodeJSBox#readme",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
 }
