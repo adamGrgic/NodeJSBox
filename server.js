@@ -1,14 +1,16 @@
-const http = require('http');
-const products = require('./data/products')
+const express = require('express');
+const bodyParser = require('body-parser')
 
-const server = http.createServer((req,res) => {
-    res.statusCode = 200
+const app = express();
+const PORT = 5000;
 
-    // content type, auth tokens, etc 
-    res.setHeader('Content=Type', 'text/html')
-    res.write()
+app.use(bodyParser.json());
+
+
+app.get('/', (req, res) => {
+    console.log('[TEST]!');
+
+    res.send('Hello from home page!');
 })
 
-const PORT = process.env.PORT || 5000
-
-server.listen(PORT, () => console.log(`server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`Server is running on port: http://localhost:${PORT}`));
