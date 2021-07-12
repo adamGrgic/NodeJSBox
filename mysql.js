@@ -3,14 +3,17 @@ var mysql = require('mysql');
 var con = mysql.createConnection({
   host: "localhost",
   user: "root",
-  password: ""
+  password: "",
+  database: "ap",
 });
 
 con.connect(function(err) {
     if (err) throw err;
     console.log("Connected!");
-    con.query("CREATE DATABASE mydb", function (err, result) {
+    con.query("select * from ap_db;", function (err, result) {
       if (err) throw err;
-      console.log("Database created");
+      console.log(result);
     });
   });
+
+
